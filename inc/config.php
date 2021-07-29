@@ -2,7 +2,7 @@
 
 session_start();
 
-define ('URL', 'http://localhost/uts-web/');
+define ('URL', 'http://localhost/si-musicplayer/');
 
 define ('ASSET', URL . 'layout/assets/');
 
