@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\Gue;
+use App\Http\Controllers\PhotosController;
+use App\Http\Controllers\AlbumsController;
+use App\Http\Controllers\Kategori;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +23,14 @@ use App\Http\Controllers\Gue;
 //     return view('index');
 // });
 
-Route::get('/', [Gue::class, 'home']);
-Route::get('/login', [Gue::class, 'login']);
-Route::get('/register', [Gue::class, 'register']);
-Route::get('/album', [Gue::class, 'album']);
-Route::get('/musik', [Gue::class, 'musik']);
-Route::get('/tambah', [Gue::class, 'tambah']);
-Route::get('/edit', [Gue::class, 'edit']);
+
+Route::get('/', [LoginController::class, 'index']);
+Route::get('/register', [LoginController::class, 'create']);
+
+Route::post('/tambahPhoto', [PhotosController::class, 'store']);
+Route::get('/tambahPhoto', [PhotosController::class, 'create']);
+Route::get('/home', [AlbumController::class, 'home']);
+Route::get('/album', [AlbumsController::class, 'index']);
+Route::get('/tambahAlbum', [AlbumController::class, 'create']);
+Route::post('/tambahAlbum', [AlbumsController::class, 'store']);
+Route::get('/kategori', [Kategori::class, 'index']);

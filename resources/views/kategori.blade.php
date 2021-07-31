@@ -1,6 +1,6 @@
 @extends('layout/nav')
 
-@section('title', 'Album')
+@section('title', 'Kategori')
 
 @section('containers')
 <div class="container">
@@ -15,19 +15,15 @@
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama Album</th>
-                        <th scope="col">Lihat Gambar</th>
-                        <th scope="col">Masukan Fato</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
-            @foreach( $album as $albm )
+            @foreach( $category as $albm )
                 <tbody>
                     <tr>
                         <th scope="row"><?= $i; ?></th>
                         <td>{{ $albm->title }}</td>
-                        <td><a href="/photo/{{ $albm->id }}" class="btn btn-warning">Lihat Gambar</a></td>
-                        <td><a href="/tambahPhoto" class="btn btn-success">Tambahkan Gambar</a></td>
-                        <td><a href="" class="btn btn-warning">Edit</a> | <a href="" class="btn btn-danger">Delete</a></td>
+                        <td><a href="" class="btn btn-danger">Delete</a></td>
 
                     </tr>
                 </tbody>

@@ -1,4 +1,4 @@
-@extends('layout/main')
+@extends('layout/blank')
 
 @section('title', 'About')
 
@@ -6,21 +6,21 @@
 <div class="container">
     <div class="row">
         <div class="col-10">
-            <h1 class="mt-3" >Halaman Login</h1>
             <br>
+            <h1>Tambah Album</h1>
             <br>
-            <form action="" method="">
+            <form action="/tambahAlbum" method="POST">
                 <table  >
                     <tr>
                         @csrf
                     </tr>
                     <tr>
-                        <td>Username</td>
-                        <td><input type="text" name="username"></td>
+                        <td>Tittle Foto</td>
+                        <td><input type="text" name="title"></td>
                     </tr>
                     <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="password"></td>
+                        <td>Caption Foto</td>
+                        <td><input type="text" name="text"></td>
                     </tr>
                     <tr>
                         <td>
@@ -32,5 +32,4 @@
         </div>
     </div>
 </div>
-
 @endsection
